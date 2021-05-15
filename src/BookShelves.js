@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import Shelf from './BookShelf'
+import PropTypes from 'prop-types';
+
+
 class BookShelves extends Component {
+
     state = {
         currentlyReading: [],
         wantToRead: [],
@@ -35,6 +39,7 @@ class BookShelves extends Component {
             })
         }
     }
+
     render() {
         return (
             <div className="list-books">
@@ -52,5 +57,10 @@ class BookShelves extends Component {
         )
     }
 }
+
+BookShelves.propTypes = {
+    books: PropTypes.object.isRequired,
+};
+
 
 export default BookShelves;
